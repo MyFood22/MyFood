@@ -52,7 +52,11 @@ const createMeal = meal => {
 	const ingredients = [];
 	// Get all ingredients from the object. Up to 20
 	//Достаньте все ингредиенты с объекта. До 20
-	for (let i = 1; i <= 20; i++) {if (window.CP.shouldStopExecution(0)) break;
+	for (let i = 1; i <= 20; i++){
+		//debugger;
+		/*alert(window);
+		alert(window.CP);
+		if (window.CP.shouldStopExecution(0)) break;*/
 		if (meal[`strIngredient${i}`]) {
 			ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`);
 		} else {
@@ -60,7 +64,7 @@ const createMeal = meal => {
 			//Остановитесь, если ингредиентов больше нет
 			break;
 		}
-	} window.CP.exitedLoop(0);
+	} //window.CP.exitedLoop(0);
 
 	const newInnerHTML = `
 		<div class="row">
